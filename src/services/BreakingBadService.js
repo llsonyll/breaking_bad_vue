@@ -14,7 +14,7 @@ export default {
     getRandomQuote() {
         return BreakingBadQuery.get('/quote/random');
     },
-    // getHouse(id) {
-    //     return GOT_query.get('/houses/' + id);
-    // }
+    getCharactersByPage(page = 0, offset = 5) {
+        return BreakingBadQuery.get(`characters?limit=${page}&offset=${offset}`);
+    }
 }
