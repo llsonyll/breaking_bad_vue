@@ -15,6 +15,9 @@ export default {
         return BreakingBadQuery.get('/quote/random');
     },
     getCharactersByPage(page = 0, offset = 5) {
-        return BreakingBadQuery.get(`characters?limit=${page}&offset=${offset}`);
+        return BreakingBadQuery.get(`/characters?limit=${page}&offset=${offset}`);
+    },
+    getBreakingBadEpisodes() {
+        return BreakingBadQuery.get('/episodes?series=Breaking+Bad');
     }
 }

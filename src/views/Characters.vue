@@ -12,13 +12,13 @@
       </div>
     </div>
 
-    <div class="v-else">{{ error }}</div>
+    <div class="" v-else>{{ error }}</div>
 
     <div class="pagination mt-5">
       <button
         v-on:click="handlePrevPage"
         class="disabled:opacity-50 disabled:cursor-not-allowed"
-        :disabled="loading || page === 1 || error"
+        :disabled="page === 1 || loading"
       >
         Prev
       </button>
@@ -26,7 +26,7 @@
       <button
         v-on:click="handleNextPage"
         class="disabled:opacity-50 disabled:cursor-not-allowed"
-        :disabled="loading || characters.length !== offset || error"
+        :disabled="characters.length !== offset || loading"
       >
         Next
       </button>
@@ -69,9 +69,8 @@ export default {
         this.characters = data;
         this.loading = false;
       } catch (error) {
-        console.log(error);
-        this.loading = false;
         this.error = "Error de red";
+        this.loading = false;
       }
     },
     handlePrevPage() {
