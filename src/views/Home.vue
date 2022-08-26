@@ -2,7 +2,11 @@
   <div class="home">
     <Quote :quote="quote" />
     <br />
-    <button v-on:click="setRandomQuote" :disabled="!quote.text">
+    <button
+      v-on:click="setRandomQuote"
+      class="disabled:cursor-not-allowed disabled:opacity-50"
+      :disabled="!quote.text"
+    >
       New Quote
     </button>
   </div>
