@@ -6,8 +6,8 @@
       <div class="loading my-10" v-if="loading">Loading...</div>
       <div class="content" v-else>
         <div class="empty" v-if="characters.length === 0">No characters</div>
-        <div class="with-content" v-else>
-          <div class="" v-for="char in characters">{{ char.name }}</div>
+        <div class="flex flex-col justify-center gap-2 p-2" v-else>
+          <CharacterCard v-for="char in characters" :character="char" />
         </div>
       </div>
     </div>
@@ -35,10 +35,16 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from "vue";
 import BreakingBadService from "../services/BreakingBadService";
 
 export default {
   name: "Characters",
+  components: {
+    CharacterCard: defineAsyncComponent(() =>
+      import("../components/CharacterCard.vue")
+    ),
+  },
   data() {
     return {
       characters: [],

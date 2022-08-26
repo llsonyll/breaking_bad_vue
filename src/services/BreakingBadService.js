@@ -17,6 +17,9 @@ export default {
     getCharactersByPage(page = 0, offset = 5) {
         return BreakingBadQuery.get(`/characters?limit=${page}&offset=${offset}`);
     },
+    getCharacterById(id) {
+        return BreakingBadQuery.get(`/characters/${id}`)
+    },
     getBreakingBadEpisodes() {
         return BreakingBadQuery.get('/episodes?series=Breaking+Bad');
     }
