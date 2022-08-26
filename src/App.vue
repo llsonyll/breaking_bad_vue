@@ -1,18 +1,32 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-// import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup></script>
 
 <template>
   <div class="">
-    <header class="header">
-      <nav>
-        <router-link to="/"> Home </router-link>
-        <router-link to="/characters"> Characters </router-link>
-        <router-link to="/episodes"> Episodes </router-link>
-        <h1>Breaking Bad API + Vue</h1>
+    <header class="header mb-6">
+      <nav class="mb-4 flex gap-8 justify-center items-center">
+        <router-link
+          active-class="font-semibold text-xl text-green-400 underline"
+          class="text-green-700 hover:text-green-400"
+          to="/"
+        >
+          Home
+        </router-link>
+        <router-link
+          active-class="font-semibold text-xl text-green-400 underline"
+          class="text-green-700 hover:text-green-400"
+          to="/characters"
+        >
+          Characters
+        </router-link>
+        <router-link
+          active-class="font-semibold text-xl text-green-400 underline"
+          class="text-green-700 hover:text-green-400"
+          to="/episodes"
+        >
+          Episodes
+        </router-link>
       </nav>
+      <h1>Breaking Bad API + Vue</h1>
     </header>
 
     <main class="content">
